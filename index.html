@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head> 
+  <link rel="stylesheet" type="text/css" href="./slick/slick.css">
+</head>
+
+<body>
+
+   <!-- initialization -->
+  <script src="dist/parallax-effect.js"></script>
+
+
+  <section class="regular slider">
+    <div>
+      <img src="img/1/40.webp">
+    </div>
+    <div>
+      <img src="img/1/50.webp">
+    </div>
+    <div>
+      <img src="img/1/60.webp">
+    </div>
+    <div>
+      <video autoplay muted loop>
+        <source src="img/1/70.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div>
+      <img src="img/1/80.webp">
+    </div>
+    <div>
+      <img src="img/1/80.webp">
+    </div>
+  </section>
+  <script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
+  <script src="./slick/slick.js" type="text/javascript" charset="utf-8"></script>  
+ 
+  <script>
+   
+   $(document).on('ready', function () {
+      $(".regular").slick({
+        speed: 500,
+        fade: true,
+        cssEase: 'linear',
+        arrows: false
+      });
+
+     
+    });
+
+  </script>
+
+  
+<script>
+  init();
+  function init() {
+    Parallax.init( view => {
+      var interval = 2 / 5;
+      var currentPart = Math.floor((view.x + 1) / interval);
+      $('.regular').slick('slickGoTo', currentPart);
+      
+    }, { smoothDist: 0.3 } );
+  }
+
+</script>
+
+</body>
+
+</html>
